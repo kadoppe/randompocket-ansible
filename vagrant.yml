@@ -1,7 +1,10 @@
 ---
 - hosts: all
   sudo: yes
+  vars:
+    nodebrew_nodejs_version: v0.12.7
   roles:
     - common
     - git
     - nginx
+    - djyugg.nodebrew
