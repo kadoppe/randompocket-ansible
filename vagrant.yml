@@ -6,5 +6,5 @@
   roles:
     - common
     - git
-    - nginx
+    - geerlingguy.nginx
     - djyugg.nodebrew
