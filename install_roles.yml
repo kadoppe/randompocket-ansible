@@ -1,3 +1,4 @@
-- src: djyugg.nodebrew
+- src: geerlingguy.repo-epel
+- src: geerlingguy.nodejs
 - src: geerlingguy.nginx
-- src: andperez.mongodb
+- src: andperez.mongod

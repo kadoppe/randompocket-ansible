@@ -3,9 +3,10 @@
   sudo: yes
   vars:
     nodebrew_nodejs_version: v0.12.7
+    nodebrew_install_user: root
   roles:
-    - common
-    - git
-    - geerlingguy.nginx
-    - djyugg.nodebrew
-    - andperez.mongodb
+    - role: geerlingguy.repo-epel
+    - role: git
+    - role: geerlingguy.nginx
+    - role: geerlingguy.nodejs
+    - role: andperez.mongodb
