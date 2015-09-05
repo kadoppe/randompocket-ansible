@@ -8,3 +8,4 @@
     - git
     - geerlingguy.nginx
     - djyugg.nodebrew
+    - andperez.mongodb
