@@ -1,0 +1,3 @@
+---
+- name: be sure Git is installed
+  yum: name='git' state=installed
