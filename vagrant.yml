@@ -4,8 +4,8 @@
   vars:
     nginx_vhosts:
       - listen: "80"
-        server_name: "randompocket.dev"
-        root: "/share"
+        server_name: "api.randompocket.dev"
+        root: "/share/randompocket-api"
         extra_parameters: |
           location / {
             proxy_set_header Upgrade $http_upgrade;
@@ -24,7 +24,7 @@
         }
 
     pm2_apps:
-      - /share/bin/www
+      - /share/randompocket-api/bin/www
 
   roles:
     - role: geerlingguy.repo-epel
