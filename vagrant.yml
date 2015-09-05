@@ -1,12 +1,10 @@
 ---
 - hosts: all
   sudo: yes
-  vars:
-    nodebrew_nodejs_version: v0.12.7
-    nodebrew_install_user: root
   roles:
     - role: geerlingguy.repo-epel
     - role: git
     - role: geerlingguy.nginx
     - role: geerlingguy.nodejs
+    - role: pm2
     - role: andperez.mongodb

@@ -1,0 +1,11 @@
+---
+- name: Ensure pm2 is installed
+  npm:
+    name: pm2
+    global: yes
+    version: latest
+  notify: restart pm2
+
+- name: Install startup script
+  command: >
+    pm2 startup centos
