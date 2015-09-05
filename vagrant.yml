@@ -1,10 +1,35 @@
 ---
 - hosts: all
   sudo: yes
+  vars:
+    nginx_vhosts:
+      - listen: "80"
+        server_name: "randompocket.dev"
+        root: "/share"
+        extra_parameters: |
+          location / {
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header Host $host;
+            proxy_http_version 1.1;
+            proxy_pass http://io_nodes;
+          }
+
+    nginx_upstreams:
+      - name: io_nodes
+        strategy: "ip_hash"
+        servers: {
+          "127.0.0.1:3000"
+        }
+
+    pm2_apps:
+      - /share/bin/www
+
   roles:
     - role: geerlingguy.repo-epel
     - role: git
     - role: geerlingguy.nginx
     - role: geerlingguy.nodejs
-    - role: pm2
     - role: andperez.mongodb
+    - role: pm2
