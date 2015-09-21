@@ -23,6 +23,9 @@
           "127.0.0.1:3000"
         }
 
+    nodejs_version: "4.1.0"
+    nodejs_install_method: "binary"
+
     pm2_apps:
       - /share/randompocket-api/bin/www
 
@@ -30,6 +33,6 @@
     - role: geerlingguy.repo-epel
     - role: git
     - role: geerlingguy.nginx
-    - role: geerlingguy.nodejs
+    - role: ANXS.nodejs
     - role: andperez.mongodb
     - role: pm2

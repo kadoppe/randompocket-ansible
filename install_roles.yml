@@ -1,4 +1,4 @@
 - src: geerlingguy.repo-epel
-- src: geerlingguy.nodejs
+- src: ANXS.nodejs
 - src: geerlingguy.nginx
-- src: andperez.mongod
+- src: andperez.mongodb
